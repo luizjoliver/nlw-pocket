@@ -1,0 +1,29 @@
+import z from 'zod'
+import { db } from '../db'
+import { goals } from '../db/schema'
+
+interface CreateGoalRequest {
+  title: string
+  desiredWeeklyFrequency: number
+}
+
+export async function createGoal({
+  desiredWeeklyFrequency,
+  title,
+}: CreateGoalRequest) {
+
+
+  const goalResult = await db
+    .insert(goals)
+    .values({
+      title: title,
+      desiredWeeklyFrequency: desiredWeeklyFrequency,
+    })
+    .returning()
+
+  const goal = goalResult[0]
+
+  return {
+    goal,
+  }
+}
