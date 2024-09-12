@@ -4,7 +4,8 @@
   "description": "Este projeto, chamado **NLW Pocket**, foi desenvolvido como parte de um evento promovido pela [Rocketseat](https://rocketseat.com.br/). O tema do evento é **desenvolvimento full stack**, com foco na stack JavaScript, utilizando React, Node.js com Fastify e integração com banco de dados.",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/http/server.ts"
+    "dev": "tsx  watch --env-file .env  src/http/server.ts",
+    "seed": "tsx --env-file .env src/db/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,10 +13,16 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@types/node": "^22.5.4",
+    "drizzle-kit": "^0.24.2",
     "tsx": "^4.19.0",
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "fastify": "^4.28.1"
+    "@paralleldrive/cuid2": "^2.2.2",
+    "dayjs": "^1.11.13",
+    "drizzle-orm": "^0.33.0",
+    "fastify": "^4.28.1",
+    "postgres": "^3.4.4",
+    "zod": "^3.23.8"
   }
 }
