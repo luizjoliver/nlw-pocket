@@ -2,7 +2,7 @@ import { Plus, X } from "lucide-react"
 import logo from "./assets/logo.png"
 import letsStart from "./assets/start.png"
 import { Button } from "./components/ui/button"
-import { Dialog, DialogClose, DialogContent, DialogTitle, DialogTrigger } from "./components/ui/dialog"
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "./components/ui/dialog"
 
 export function App() {
   return (
@@ -22,6 +22,22 @@ export function App() {
         </DialogTrigger>
          
     </div>
+  
+    <DialogContent>
+      <div className="flex flex-col gap-3">
+          <div className="flex  items-center justify-between">
+            <DialogTitle>Cadastrar meta</DialogTitle>
+              <DialogClose>
+                <X className="size-5 text-zinc-600"/>
+              </DialogClose>
+
+          </div>
+          <DialogDescription>
+            Adicone atividades que te fazem bem e que você quer continuar praticando toda semana
+          </DialogDescription>
+        </div>
+    </DialogContent>
+
 
     </Dialog>
   )
